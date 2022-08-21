@@ -1,4 +1,8 @@
-async function Show() {
+$(document).ready(() => {
+    $('#cep').inputmask({'alias': 'cep', 'mask': '99999-999'})
+})
+
+async function show() {
     let cep = document.getElementById('cep').value
     let cep_input = document.querySelector('input#cep')
     let output = document.querySelector("div#output")
@@ -10,7 +14,6 @@ async function Show() {
     let city = data['city']
     let district = data['district']
 
-    
     if (data['status'] == 404 || data['status'] == 400) {
         output.style.color = `#f50505`
         output.innerHTML = '<p>CEP não encontrado ou inválido, digite novamente</p>'
@@ -18,6 +21,6 @@ async function Show() {
         output.style.color = `black`
         output.innerHTML = `<p>CEP: ${cep}</p> <p>Endereço: ${address}</p> <p>Cidade: ${city}</p> <p>Estado: ${state}</p> <p>Distrito/Bairro: ${district}</p>`
     }
-    cep_input.focus()
     
+    cep_input.focus()
 }
