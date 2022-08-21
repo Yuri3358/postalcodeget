@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('#cep').inputmask({'alias': 'cep', 'mask': '99999-999'})
+    $('#cep').inputmask('99999-999')
 })
 
 async function show() {
