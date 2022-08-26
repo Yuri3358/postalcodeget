@@ -1,9 +1,10 @@
-h1 {
+header {
     text-align: center;
+    font-size: 1cm;
 }
 
 p {
-    font-size: 28px;
+    font-size: 30px;
 }
 
 body {
