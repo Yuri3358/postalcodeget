@@ -4,7 +4,26 @@
     margin: auto;
     width: 20cm;
     height: 10cm;
+    font-size: 22px;
     border-color: black;
     border-radius: 8px;
     border-style: groove;
 }
+
+body {background-color: gray;}
+
+input {
+    font-size: 20px;
+    border-radius: 6px;
+    border-color: black;
+    width: 2.8cm;
+    text-align: center;
+}
+
+label {
+    padding-right: 10px;
+    font-size: 30px;
+}
+
+.infos {font-weight: bold;}
+#output {font-size: 30px;}
