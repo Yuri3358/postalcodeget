@@ -1,0 +1,10 @@
+#content {
+    background-color: rgb(66, 128, 245);
+    text-align: center;
+    margin: auto;
+    width: 20cm;
+    height: 10cm;
+    border-color: black;
+    border-radius: 8px;
+    border-style: groove;
+}
