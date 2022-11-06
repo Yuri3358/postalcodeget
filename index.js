@@ -12,7 +12,7 @@ function App() {
         }
     }, [postalcode]) 
     return (
-        <div>
+        <section>
             <h1>Localizador de CEP</h1>
             <label htmlFor="inputcep">CEP</label>
             <input 
@@ -24,7 +24,7 @@ function App() {
                 <p><span>Cidade</span>: {data.state}</p>
                 <p><span>Bairro/distrito</span>: {data.district}</p>
             </div>
-        </div>
+        </section>
     )
 }
 
