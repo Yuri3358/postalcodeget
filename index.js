@@ -1,26 +1,32 @@
-$(document).ready(() => {
-    $('#cep').inputmask('99999-999')
-})
+const root = ReactDOM.createRoot(document.getElementById("root"))
 
-async function show() {
-    let cep = document.getElementById('cep').value
-    let cep_input = document.querySelector('input#cep')
-    let output = document.querySelector("div#output")
-    
-    let request = await fetch(`https://cep.awesomeapi.com.br/json/${cep}`)
-    let data = await request.json()
-    let address = data['address']
-    let state = data['state']
-    let city = data['city']
-    let district = data['district']
-
-    if (data['status'] == 404 || data['status'] == 400) {
-        output.style.color = `#f50505`
-        output.innerHTML = '<p>CEP não encontrado ou inválido, digite novamente</p>'
-    } else {
-        output.style.color = `black`
-        output.innerHTML = `<p>CEP: ${cep}</p> <p>Endereço: ${address}</p> <p>Cidade: ${city}</p> <p>Estado: ${state}</p> <p>Distrito/Bairro: ${district}</p>`
-    }
-    
-    cep_input.focus()
+function App() {
+    const [data, setData] = React.useState({})
+    const [postalcode, setPostalCode] = React.useState("")
+    //[address_name, state, city]
+    React.useEffect(() => {
+        if (postalcode.length == 8) {
+            fetch(`https://cep.awesomeapi.com.br/json/${postalcode}`)
+            .then(response => response.json())
+            .then(output => setData(output))     
+        }
+    }, [postalcode]) 
+    return (
+        <div>
+            <h1>Localizador de CEP</h1>
+            <label htmlFor="inputcep">CEP</label>
+            <input 
+                type="text" 
+                id="inputcep" 
+                onChange={e => setPostalCode(e.target.value)}></input>
+            <div>
+                <p>Endereço: {data.address_name}</p>
+                <p>Cidade: {data.state}</p>
+                <p>Bairro/distrito: {data.district}</p>
+            </div>
+        </div>
+    )
 }
+
+
+root.render(<App/>)
