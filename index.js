@@ -20,9 +20,9 @@ function App() {
                 id="inputcep" 
                 onChange={e => setPostalCode(e.target.value)}></input>
             <div>
-                <p><span>Endereço</span>: {data.address_name}</p>
-                <p><span>Cidade</span>: {data.state}</p>
-                <p><span>Bairro/distrito</span>: {data.district}</p>
+                <p><span className="infos">Endereço</span>: {data.address_name}</p>
+                <p><span className="infos">Cidade</span>: {data.state}</p>
+                <p><span classname="infos">Bairro/distrito</span>: {data.district}</p>
             </div>
         </section>
     )
