@@ -20,7 +20,7 @@ function App() {
                 type="text" 
                 id="inputcep" 
                 onChange={e => setPostalCode(e.target.value)}></input>
-            <div>
+            <div id="output">
                 <p>
                     <span className="infos">Endereço</span>: {data.address_name}
                 </p>
