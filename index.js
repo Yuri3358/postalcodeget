@@ -11,7 +11,7 @@ function App() {
             .then(output => setData(output))     
         }
     }, [postalcode]) 
-    
+
     return (
         <section id="content">
             <h1>Localizador de CEP</h1>
@@ -30,7 +30,7 @@ function App() {
                 </p>
 
                 <p>
-                    <span classname="infos">Bairro/distrito</span>: {data.district}
+                    <span className="infos">Bairro/distrito</span>: {data.district}
                 </p>
             </div>
         </section>
