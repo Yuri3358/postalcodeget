@@ -26,7 +26,7 @@ function App() {
                 </p>
 
                 <p>
-                    <span className="infos">Cidade</span>: {data.state}
+                    <span className="infos">Cidade</span>: {data.city}
                 </p>
 
                 <p>
