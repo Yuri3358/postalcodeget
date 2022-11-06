@@ -21,7 +21,7 @@ function App() {
                 id="inputcep" 
                 onChange={e => setPostalCode(e.target.value)}>
             </input>
-            
+
             <div id="output">
                 <p>
                     <span className="infos">Endereço</span>: {data.address_name}
@@ -38,6 +38,5 @@ function App() {
         </section>
     )
 }
-
 
 root.render(<App/>)
